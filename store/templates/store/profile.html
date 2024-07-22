@@ -1,0 +1,27 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block content %}
+
+
+
+<div class="card mx-auto" style="width: 18rem;">
+    <h5 class="card-header">Profile</h5>
+    <div class="card-body">
+      <p class="card-text">
+        <form method="POST" action="{% url 'profile' %}">
+            {% csrf_token %}
+        
+            {{user_form.as_p}}
+                <button type="submit" class="btn btn-primary">Update</button>
+        </form>
+        <br/>
+    </div>
+    {{form.errors}}
+  </div>
+
+
+
+
+
+{% endblock content %}
